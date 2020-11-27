@@ -28,7 +28,7 @@ def main(opts):
     feature_df = futils.process_features(count_df)
     tsg_test_cols = ['Gene', 'inactivating p-value']
     feature_df = pd.merge(feature_df, tsg_test_df[tsg_test_cols],
-                          how='left', on='Gene')
+                          how='left', on='Gene')   #合并feature_df ,tsg_test_df[tsg_test-cols], 用Gene来连接
     og_test_cols = ['Gene', 'entropy p-value', 'vest p-value', 'combined p-value']
     feature_df = pd.merge(feature_df, og_test_df[og_test_cols],
                           how='left', on='Gene')
